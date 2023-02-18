@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <com.google.android.material.appbar.CollapsingToolbarLayout
+        android:id="@+id/collapsing_library"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+        app:contentScrim="@color/white">
+
+        <ImageView
+            android:id="@+id/delete"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_delete"
+            android:layout_gravity="top|end"
+            android:layout_margin="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:text="ToDo"
+            android:layout_gravity="top|center"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+
+    </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:id="@+id/rvTodoList"
+        android:backgroundTint="?colorOnPrimary"
+        tools:listitem="@layout/task_item_row"/>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Task"
+        android:id="@+id/newTaskButton"
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="?colorOnPrimary"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:padding="5dp"
+        android:layout_margin="20dp"
+        app:icon="@drawable/ic_add"
+        app:iconTint="?colorOnPrimary"/>
+
+
+</RelativeLayout>
